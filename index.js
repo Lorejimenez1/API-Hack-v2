@@ -16,7 +16,7 @@ function displayNewsData(data) {
 }
 
 function renderNews(result) {
-  For (i)
+  
   return `<div class="row">
   <div class="col-12">
     <h2>Latest News Articles</h2>
@@ -47,11 +47,12 @@ function displaySearchData(data) {
 
 function renderResult(result) {
   console.log(result)
+  const myArray = result
   return `<div id="grid-1" class="col-6">
           <table border="2">
             <tr>
               <td>Price(usd)</td>
-              <td>${[0][7]}</td>
+              <td>${myArray[7]}</td>
             </tr>
             <tr>
               <td>OPENDAY</td>
@@ -67,7 +68,7 @@ function renderResult(result) {
           <table border="2">
             <tr>
               <td>Price(usd)</td>
-              <td>${[1][4]}</td>
+              <td>${myArray[1][7]}</td>
             </tr>
             <tr>
               <td>OPENDAY</td>

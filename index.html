@@ -4,6 +4,10 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
 	<title>API Hack</title>
+  <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
 	<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -22,13 +26,9 @@
 					<legend><h2>Compare any two Cryptocurrencies.</h2></legend>
 					<div class = "search-input">
 						<label for="search-box"> 
-						<input placeholder="example: btc,dgb" type="text" name="search-box" id="js-query" class = "input-box" title= "2 symbols seperated by commas" required>
-					</label>
-					<label for="search-currency">
-						<select name ="search-currency" id="js-search-currency">
-							<option value = "USD">USD</option>
-							<option value = "EUR" selected>EUR</option>
-						</select>
+						<input style="text-transform: uppercase" placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  title="2 symbols seperated by commas" required>
+					</label><span>vs<label for="search-box"> 
+						<input style="text-transform: uppercase" placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  title="2 symbols seperated by commas" required>
 					</label>
 					</div>
 				<div class = "search-button">
@@ -36,7 +36,8 @@
 				</div>
 			</form>
 		</div> 
-	  <div class="js-search-results"></div>
+	  <div id="js-search-results" class="row"></div>
+    <div role="region" class="js-news-results">
   </main>
   <script src="index.js"></script>	  
 
