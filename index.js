@@ -38,10 +38,9 @@ function getDataFromBitfinex(searchTerm, searchTermTwo, callback) {
 }
 
 function displaySearchData(data) {
-  console.log(data);
-  const results = data.map((item, index) => renderResult(item));
- // console.log(item);
-  console.log(results);
+  
+  const results = renderResult(data);
+ 
   $('#js-search-results').html(results);
 }
 
@@ -52,15 +51,15 @@ function renderResult(result) {
           <table border="2">
             <tr>
               <td>Price(usd)</td>
-              <td>${myArray[7]}</td>
+              <td>${myArray[0][7]}</td>
             </tr>
             <tr>
-              <td>OPENDAY</td>
-              <td>5666</td>
+              <td>DailyChange(%)</td>
+              <td>${myArray[0][6]}</td>
             </tr>
             <tr>
               <td>VOLUME24HR</td>
-              <td>133,333</td>
+              <td>${myArray[0][8]}</td>
             </tr>
           </table>    
       </div>
@@ -71,12 +70,12 @@ function renderResult(result) {
               <td>${myArray[1][7]}</td>
             </tr>
             <tr>
-              <td>OPENDAY</td>
-              <td>5666</td>
+              <td>DailyChange(%)</td>
+              <td>${myArray[1][6]}</td>
             </tr>
             <tr>
               <td>VOLUME24HR</td>
-              <td>133,333</td>
+              <td>${myArray[0][8]}</td>
             </tr>
           </table>   
         </div>`;
