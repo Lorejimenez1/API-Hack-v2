@@ -1,10 +1,13 @@
 * {
   box-sizing: border-box;
+  
 }
 body {
-  text-align: center;	
-  font-family: 'Times New Roman', Times, serif
+  font-family: 'Orbitron';
+  font-weight: 800;
+  background: whitesmoke;
 }
+
 .row {
   max-width: 1000px;
   padding-top: 25px;
@@ -39,6 +42,7 @@ body {
 
 /* Mobile defaults */
 .col-3, .col-4, .col-6, .col-12 {
+
   width: 100%;
 }
 
@@ -52,11 +56,13 @@ body {
 
   /* 4 columns, 4/12 in % */
   .col-4 {
+    height: 350px;
     width: 33.333333%;
   }
 
   /* 6 columns, 6/12 in % */
   .col-6 {
+
     width: 50%;
   }
 
@@ -64,17 +70,60 @@ body {
   .col-12 {
     width: 100%;
   }
- 
+
 }
+
 @media only screen and (max-width: 639px) {
- h1, h2 {
-    padding: 10px;
-    font-size: 30px;
+  * {
+    margin: 0;
   }
-  
+  .news-header h2 {
+  visibility: hidden;
 }
-.col-6 {
-  border: 2px solid gray; 
+  h2 {
+    padding: 60px 0px 0px 0px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .logo {
+    margin: auto;
+    height: 100px; 
+    width: 100px;
+  }
+  h1 {
+    visibility: hidden;
+  }
+  .col-12, .col-6, #search-box {
+    height: 210px;
+  }
+
+}
+  
+.card {
+  height: 100%;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+.card:hover {
+  cursor: pointer;
+}
+.card-image {
+  border-bottom: 1px solid black;
+  height: 45%;
+  width: 100%;
+}
+
+.card-content {
+  background-color: #64FFDA;
+  height: 55%;
+  padding: 10px;
+}
+
+.card-content a {
+  margin: 0.5em 0;
+}
+
+.col-6 { 
   height: 275px;
   padding-bottom: 10px;
 }
@@ -85,22 +134,35 @@ body {
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  width: 220px;
-  height: 220px;
+  width: 210px;
+  height: 210px;
   border-radius: 10%;
   padding-top: 35px;
 }
 h1 {
-  text-align: center;
+  font-weight: 800;
+  color: #fff;
   display: inline-block;
+ 
+}
+ .card-content h3 {
+  display: block;
+  height: 90%;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  text-align: center;
 }
 h2 {
-  text-align: center;
+  
+	text-align: center;
 }
 header {
-    width: 100%;
-    color: black;
-    font-size: 30px;
+  background: url(https://codepen.io/alemesre/pen/hAxGg/image/large.png);
+  width: 100%;
+  color: black;
+  font-size: 40px;
 }
 h1 {
 
@@ -117,10 +179,62 @@ select {
 
 }
 table {
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/cream_dust.png);
   width: 100%;
   height: 90%;
 }
 td {
+  border: 1px solid #00BFA5;
+  font-size: 21px;
   width: 50%;
   text-align: center;
 }
+#js-news-results {
+	padding-top: 40px;
+}
+form {
+	text-align: center;
+}
+li {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom: double
+}
+button {
+  border: none;
+  color: black;
+  background-color: #00BFA5;
+	padding-top: 15px 5px 15px 5px;
+	display: block-inline;
+	width: 10%;
+	height: 20%;
+  cursor: pointer;
+  box-shadow: 0 4px #999;
+  border-radius: 4px;
+}
+button:hover {
+  background-color: #00918c;
+}
+button:active {
+  background-color: #00918c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}  
+.search-button {
+	padding-top: 20px;
+}
+.news-header h2 {
+  padding: 40px 0px 0px 0px;
+  margin: 0; 
+}
+.input-box {
+  border: 1px solid #006560;
+}
+input:focus {
+  outline: 3px solid teal;
+}
+
+
+
+
+
