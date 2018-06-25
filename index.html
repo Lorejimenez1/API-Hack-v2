@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<title>API Hack</title>
+  <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+	<link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<header>
+      <div class="row">
+      	<div id="main-header" class="col-12">
+        	<img class="logo" src="https://www.buybitcoinworldwide.com/img/kb/crypto/crypto.png">
+        	<h1>CryptoEdge</h1>
+      	</div>
+      </div>
+  </header>
+  <main role="main">
+  	<div id="search-box" class="row">
+  		<div id="search-box" class="col-12">
+				<form id="js-search-form" class="search-form">
+					<legend><h3>Compare any two Cryptocurrencies.</h3></legend>
+					<div class = "search-input">
+						<label for="search-box"> 
+						<input  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  title="2 symbols seperated by commas" required>
+					</label><span>vs<label for="search-box"> 
+						<input  placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  title="2 symbols seperated by commas" required>
+					</label>
+					</div>
+				<div class = "search-button">
+					<button id="js-search-button" class="fa fa-search" type="submit"></button>
+					<button id="js-refresh-button" class="fa fa-refresh" type="submit"></button>
+				</div>
+			</form>
+		</div> 
+	  </div>
+	  <div id="js-search-results" class="row"></div>
+	  <div class="news-header"hidden><h2>Latest News</h2></div>
+    <div role="region" id="js-news-results" class="row" hidden>
+    </div>
+  </main>
+  <script src="index.js"></script>	  
+
+</body>
+</html>
