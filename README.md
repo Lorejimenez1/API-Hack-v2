@@ -3,7 +3,7 @@
 https://lorejimenez1.github.io/API-Hack-v2/
 
 # Motivation 
-My vison was a useful yet very simple app that returns realtime reliable technical data on a very big topic in todays society, Cryptocurrency
+My vision was a useful yet very simple app that returns realtime reliable technical data on a very big topic in todays society, Cryptocurrency
 
 
 
