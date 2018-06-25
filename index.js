@@ -4,7 +4,7 @@ const CRYPTO_NEWS_URL= 'https://newsapi.org/v2/everything';
 function getDataFromNewsApi(searchTerm, searchTermTwo, callback) {
   const query = {
   q: `"${searchTerm}","${searchTermTwo}","Crypto"`,
-  sources: 'crypto-coins-news,reddit-r-all,cnn,',
+  sources: 'crypto-coins-news,reddit-r-all,cnn,cnbc',
   sortBy: 'publishedAt',
   pageSize: `3`,
   apiKey: `96f21de33cdd4a99933cfcd4075c603b`,
