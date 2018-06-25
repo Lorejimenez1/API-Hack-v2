@@ -9,7 +9,7 @@ My vision was a useful yet very simple app that returns realtime reliable techni
 
 # Summary
 Allows users to search two cryptocurrencies and get back realtime data and news, specifically price volume price change and low/high of day essentail technical prices. The news are articles from sourecs like cnn and users ccan see the source of the article and if they want to can click on the title to open a new window that will take them to that article or story.
-#Technolgy Used
+# Technolgy Used
 -Html
 -css
 -javascript
