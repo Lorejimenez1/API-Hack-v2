@@ -3,8 +3,7 @@
   
 }
 body {
-  font-family: 'Orbitron';
-  font-weight: 800;
+  font-family: 'Crete Round';
   background: whitesmoke;
 }
 
@@ -42,7 +41,6 @@ body {
 
 /* Mobile defaults */
 .col-3, .col-4, .col-6, .col-12 {
-
   width: 100%;
 }
 
@@ -56,7 +54,7 @@ body {
 
   /* 4 columns, 4/12 in % */
   .col-4 {
-    height: 350px;
+    height: 300px;
     width: 33.333333%;
   }
 
@@ -70,7 +68,9 @@ body {
   .col-12 {
     width: 100%;
   }
-
+  h1 {
+    visibility: visible;
+  }
 }
 
 @media only screen and (max-width: 639px) {
@@ -78,8 +78,11 @@ body {
     margin: 0;
   }
   .news-header h2 {
-  visibility: hidden;
-}
+    visibility: hidden;
+  } 
+  h1 {
+    visibility: hidden;
+  }
   h2 {
     padding: 60px 0px 0px 0px;
     font-size: 18px;
@@ -90,15 +93,24 @@ body {
     height: 100px; 
     width: 100px;
   }
-  h1 {
-    visibility: hidden;
-  }
-  .col-12, .col-6, #search-box {
+  .col-12, #search-box {
     height: 210px;
   }
-
+  .col-6 {
+    height: 170px;
+  }
+  table td {
+    border: 1px solid #00BFA5;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+    text-align: center;
+ }
+ h3 {
+  font-size: 10px;
+ }
 }
-  
+
 .card {
   height: 100%;
   border: 1px solid black;
@@ -118,14 +130,12 @@ body {
   height: 55%;
   padding: 10px;
 }
-
 .card-content a {
   margin: 0.5em 0;
 }
 
 .col-6 { 
   height: 275px;
-  padding-bottom: 10px;
 }
 .col-12 {
   padding: 0px 0px 15px 0px;
@@ -156,7 +166,7 @@ h1 {
 }
 h2 {
   
-	text-align: center;
+  text-align: center;
 }
 header {
   background: url(https://codepen.io/alemesre/pen/hAxGg/image/large.png);
@@ -165,18 +175,15 @@ header {
   font-size: 40px;
 }
 h1 {
-
-	padding-left: 100px;
+  padding-left: 100px;
 }
 .js-search-form {
-	
-	padding-top: 50px;
+  padding-top: 50px;
 } 
 select {
   display: inline-block;
   width: 100%;
   height: 10%;
-
 }
 table {
   background: url(https://www.toptal.com/designers/subtlepatterns/patterns/cream_dust.png);
@@ -184,30 +191,31 @@ table {
   height: 90%;
 }
 td {
+  font-weight: 800;
   border: 1px solid #00BFA5;
-  font-size: 21px;
+  font-size: 16px;
   width: 50%;
   text-align: center;
 }
 #js-news-results {
-	padding-top: 40px;
+  padding-top: 40px;
 }
 form {
-	text-align: center;
+  text-align: center;
 }
 li {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	border-bottom: double
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: double
 }
 button {
   border: none;
   color: black;
   background-color: #00BFA5;
-	padding-top: 15px 5px 15px 5px;
-	display: block-inline;
-	width: 10%;
-	height: 20%;
+  padding-top: 15px 5px 15px 5px;
+  display: block-inline;
+  width: 10%;
+  height: 20%;
   cursor: pointer;
   box-shadow: 0 4px #999;
   border-radius: 4px;
@@ -221,7 +229,7 @@ button:active {
   transform: translateY(4px);
 }  
 .search-button {
-	padding-top: 20px;
+  padding-top: 20px;
 }
 .news-header h2 {
   padding: 40px 0px 0px 0px;
@@ -232,6 +240,14 @@ button:active {
 }
 input:focus {
   outline: 3px solid teal;
+}
+p {
+  font-size: 12px;
+  font-weight: 800;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 0;
+  margin: 0;
 }
 
 
