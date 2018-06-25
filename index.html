@@ -27,12 +27,12 @@
   	<div id="search-box" class="row">
   		<div id="search-box" class="col-12">
 				<form id="js-search-form" class="search-form">
-					<legend><h3>Compare any two Cryptocurrencies.</h3></legend>
+					<legend><h3>Compare any two Cryptocurrencies. Valid inputs must be 3 character symbol</h3></legend>
 					<div class = "search-input">
 						<label for="search-box"> 
-						<input  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  title="2 symbols seperated by commas" required>
+						<input  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
 					</label><span>vs<label for="search-box"> 
-						<input  placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  title="2 symbols seperated by commas" required>
+						<input  placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
 					</label>
 					</div>
 				<div class = "search-button">
