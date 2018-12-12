@@ -1,4 +1,4 @@
-const CRYPTO_SEARCH_URL= 'https://api.bitfinex.com/v2/tickers';
+const CRYPTO_SEARCH_URL= 'https://cors-anywhere.herokuapp.com/'+'https://api.bitfinex.com/v2/tickers';
 const CRYPTO_NEWS_URL= 'https://newsapi.org/v2/everything';
 
 function getDataFromNewsApi(searchTerm, searchTermTwo, callback) {
