@@ -15,29 +15,29 @@
 	<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<header>
+	<header role="banner">
       <div class="row">
       	<div id="main-header" class="col-12">
-        	<img class="logo" src="https://www.buybitcoinworldwide.com/img/kb/crypto/crypto.png">
+        	<img alt="3 cryptocoins joined together for a logo"class="logo" src="https://www.buybitcoinworldwide.com/img/kb/crypto/crypto.png">
         	<h1>CryptoEdge</h1>
       	</div>
       </div>
   </header>
   <main role="main">
-  	<div id="search-box" class="row">
+  	<div id="search-box-1" class="row">
   		<div id="search-box" class="col-12">
 				<form id="js-search-form" class="search-form">
-					<legend><h3>Compare any two Cryptocurrencies. Valid inputs must be 3 character symbol</h3></legend>
+					<legend><h2>Compare any two Cryptocurrencies. Valid inputs must be 3 character symbol</h2></legend>
 					<div class = "search-input">
 						<label for="search-box"> 
-						<input  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
+						<input aria-label="search-input"  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
 					</label><span>vs<label for="search-box"> 
-						<input  placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
+						<input aria-label="search-input" placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
 					</label>
 					</div>
 				<div class = "search-button">
-					<button id="js-search-button" class="fa fa-search" type="submit"></button>
-					<button id="js-refresh-button" class="fa fa-refresh" type="submit"></button>
+					<button aria-label="submit button"id="js-search-button" class="fa fa-search" type="submit"></button>
+					<button aria-label="refresh button"id="js-refresh-button" class="fa fa-refresh" type="submit"></button>
 				</div>
 			</form>
 		</div> 
