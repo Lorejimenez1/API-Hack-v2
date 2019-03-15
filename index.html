@@ -17,20 +17,49 @@
 <body>
 	<header role="banner">
 			<h1 class="title">CryptoView</h1>						
-				<nav>
+				<nav class="nav">
 					<ul>
 						<li class="active">Home</li>
 						<li>Tickers</li>
 						<li>Why Blockchain</li>
-						<li>Compare</li>
+						<li><button class="nav-button">Compare</button></li>
 					</ul>
 				</nav>
   </header>
   <main role="main">
-  	<div id="search-box-1" class="row">
+
+			<div id="landing-section" class="row" aria-live="assertive"></div>
+					<div class="col-4">
+						<div class="card">
+							<img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/rey_square.png" />
+							<div class="card-content">
+								<h3>Rey</h3>
+								<p>Protagonist, from Jakku</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/finn_square.png" />
+							<div class="card-content">
+								<h3>Finn</h3>
+								<p>Stormtrooper, befriends Rey</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card">
+							<img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/kylo_square.png" />
+							<div class="card-content">
+								<h3>Kylo Ren</h3>
+								<p>Main villain, or is he?</p>
+							</div>
+						</div>
+					</div>
+				</div>  	<div id="search-box-1" class="row">
   		<div id="search-box" class="col-12">
 				<form id="js-search-form" class="search-form">
-					<legend><h2>Compare any two Cryptocurrencies. Valid inputs must be 3 character symbol</h2></legend>
+					<legend></legend>
 					<div class = "search-input">
 						<label for="search-box"> 
 						<input aria-label="search-input"  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>

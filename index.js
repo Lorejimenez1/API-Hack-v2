@@ -124,5 +124,13 @@ function watchSubmit() {
     getDataFromNewsApi(query, queryTwo, displayNewsData);
     });
 }
+function watchCompareButton() {
+  $(".nav-button").click(function(event) {
+    event.stopPropagation();
+    $(".col-4").empty();
+    $(".col-12").css("visibility", "visible");
+  });
+}
 
+$(watchCompareButton);
 $(watchSubmit);
