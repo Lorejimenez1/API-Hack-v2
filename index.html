@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -19,22 +18,23 @@
 			<h1 class="title">CryptoView</h1>						
 				<nav class="nav">
 					<ul>
-						<li class="active">Home</li>
-						<li>Tickers</li>
-						<li>Why Blockchain</li>
-						<li><button class="nav-button">Compare</button></li>
+						<li class="nav-home active">Home</li>
+						<li class="nav-tickers">Tickers</li>
+						<li class="nav-compare">Compare</li>
 					</ul>
 				</nav>
   </header>
   <main role="main">
-
-			<div id="landing-section" class="row" aria-live="assertive"></div>
+			<h1 class="main-header">Search and compare cryptocurrency</h1>
+			<h2>Crypto view is the easist place to find technical stats on coins</h2>
+			<div id="landing-section" class="row" aria-live="assertive">
 					<div class="col-4">
 						<div class="card">
-							<img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/rey_square.png" />
+							<img class="card-image" src="https://g.foolcdn.com/editorial/images/484328/gettyimages-882340742_large.jpg" />
 							<div class="card-content">
-								<h3>Rey</h3>
-								<p>Protagonist, from Jakku</p>
+								<h3>Compare</h3>
+								<p>Get real-time technical data on the top tickers</p>
+								<p>Symbol	Last Price	24H Change	24H High	24H Low	24H Volume</p>
 							</div>
 						</div>
 					</div>
@@ -42,30 +42,30 @@
 						<div class="card">
 							<img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/finn_square.png" />
 							<div class="card-content">
-								<h3>Finn</h3>
-								<p>Stormtrooper, befriends Rey</p>
+								<h3>Tickers</h3>
+								<p>Support and technical dara for over 350 coins/tokens</p>
+								<p>Search for your perticaluar ticker</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-4">
 						<div class="card">
-							<img class="card-image" src="https://tf-assets-prod.s3.amazonaws.com/tf-curric/WEB-DEV-001/2.6.3_challenge_responsive_layout/kylo_square.png" />
+							<img class="card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn0KOuiSS6vO8-iIgkViarA8nlZ29ZVhdmFl6VvJQwmo46-ZPofw
+							" />
 							<div class="card-content">
-								<h3>Kylo Ren</h3>
+								<h3>Why blockchain</h3>
 								<p>Main villain, or is he?</p>
 							</div>
 						</div>
 					</div>
-				</div>  	<div id="search-box-1" class="row">
+				</div>
+				<div id="search-box-1" class="row">
   		<div id="search-box" class="col-12">
 				<form id="js-search-form" class="search-form">
 					<legend></legend>
 					<div class = "search-input">
 						<label for="search-box"> 
 						<input aria-label="search-input"  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
-					</label><span>vs<label for="search-box"> 
-						<input aria-label="search-input" placeholder="LTC" type="text" name="search-box" id="js-query-2" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
-					</label>
 					</div>
 				<div class = "search-button">
 					<button aria-label="submit button"id="js-search-button" class="fa fa-search" type="submit"></button>
@@ -74,8 +74,11 @@
 			</form>
 		</div> 
 	  </div>
-	  <div id="js-search-results" class="row" aria-live="assertive" hidden></div>
-    <div role="region" id="js-news-results" class="row" hidden>
+		<div id="js-search-results" class="row" aria-live="assertive" hidden></div>
+		<div role="region" id="js-news-results" class="row" hidden></div>
+    <div role="region" id="js-ticker-all-results" class="row" hidden>
+
+	
     </div>
   </main>
   <script src="index.js"></script>	  
