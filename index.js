@@ -1,6 +1,6 @@
-const CRYPTO_SEARCH_URL= 'https://cors-anywhere.herokuapp.com/'+'https://api.bitfinex.com/v2/tickers';
-const CRYPTO_NEWS_URL= 'https://newsapi.org/v2/everything';
-const bitfinex_api = 'https://cors-anywhere.herokuapp.com/'+'https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD,tMKRUSD,tBABUSD,tETHUSD,tDSHUSD,tBSVUSD,tLTCUSD,tZECUSD,tXMRUSD,tDGXUSD,tREPUSD,tMLNUSD';
+const CRYPTO_SEARCH_URL = 'https://cors-anywhere.herokuapp.com/' + 'https://api.bitfinex.com/v2/tickers';
+const CRYPTO_NEWS_URL = 'https://newsapi.org/v2/everything';
+const bitfinex_api = 'https://cors-anywhere.herokuapp.com/' + 'https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD,tMKRUSD,tBABUSD,tETHUSD,tDSHUSD,tBSVUSD,tLTCUSD,tZECUSD,tXMRUSD,tDGXUSD,tREPUSD,tMLNUSD';
 
 
 function getAllStocks() {
@@ -8,10 +8,11 @@ function getAllStocks() {
 }
 
 function displayAllStocks(data) {
-  
+
   let stockArray = data;
 
   $('#js-ticker-all-results').html(` 
+  <h2>Live: Top crytpo prices</h2><button class=refresh></button>
   <table class="darkTable">
   <thead>
     <tr>
@@ -51,15 +52,16 @@ function displayAllStocks(data) {
   </table>
   `);
 }
+
 function getDataFromNewsApi(searchTerm, searchTermTwo, callback) {
   const query = {
-  q: `"${searchTerm}","${searchTermTwo}","Crypto"`,
-  sources: 'crypto-coins-news,reddit-r-all,cnn,cnbc',
-  sortBy: 'publishedAt',
-  pageSize: `3`,
-  apiKey: `96f21de33cdd4a99933cfcd4075c603b`,
-  language: `en`,
-}
+    q: `"${searchTerm}","${searchTermTwo}","Crypto"`,
+    sources: 'crypto-coins-news,reddit-r-all,cnn,cnbc',
+    sortBy: 'publishedAt',
+    pageSize: `3`,
+    apiKey: `96f21de33cdd4a99933cfcd4075c603b`,
+    language: `en`,
+  }
   $.getJSON(CRYPTO_NEWS_URL, query, callback);
 }
 
@@ -67,12 +69,12 @@ function displayNewsData(data) {
   console.log(data);
   const news = data.articles.map((item, index) => renderNews(item));
   $('#js-news-results').prop('hidden', false);
- 	$('#js-news-results').html(news);
+  $('#js-news-results').html(news);
 }
 
 function renderNews(result) {
   //console.log(result)
-  	return `
+  return `
   	<div class=col-4>
   		<div class="card w3-hover-grayscale">
   			<img class="card-image" alt="${result.description}"
@@ -86,26 +88,26 @@ function renderNews(result) {
   	</div>
   	`;
 }
- 
+
 function getDataFromBitfinex(searchTerm, callback) {
   const query = {
-  symbols: `t${searchTerm}USD,t${searchTerm}BTC`
-  
-}
+    symbols: `t${searchTerm}USD,t${searchTerm}BTC`
+
+  }
   $.getJSON(CRYPTO_SEARCH_URL, query, callback);
 }
 
 function displaySearchData(data) {
   const results = renderResult(data);
-  $('#js-search-results').prop('hidden', false);
+  $('#js-search-results').css("display", "block");
   $('#js-search-results').html(results);
 }
 
 function renderResult(result) {
-   //console.log(result)
+  //console.log(result)
   let stockArray = result
   if (result.length > 1) {
-  return `
+    return `
   <table class="darkTable">
   <thead>
     <tr>
@@ -126,8 +128,7 @@ function renderResult(result) {
     </tr>
   </table>
     `;
-  }
-  else {
+  } else {
     return `
     <table class="darkTable">
     <thead>
@@ -152,36 +153,49 @@ function renderResult(result) {
 }
 
 function watchSubmit() {
-	$('#js-search-form').submit(event => {
-		event.preventDefault();
-		const queryTarget = $(event.currentTarget).find('#js-query');
-		const query = queryTarget.val().toUpperCase() ;
+  $('#js-search-form').submit(event => {
+    event.preventDefault();
+    const queryTarget = $(event.currentTarget).find('#js-query');
+    const query = queryTarget.val().toUpperCase();
     getDataFromBitfinex(query, displaySearchData);
     getDataFromNewsApi(query, displayNewsData);
-    });
+  });
 }
+
 function watchCompareButton() {
   $(".nav-compare").click(function(event) {
     event.stopPropagation();
-    b = $(".col-4").detach();    
-    $('#js-ticker-all-results').prop('hidden', false);
-    $("table").css("visibility", "visible");
+    $("#js-search-results").css("display", "none");
+    $("#js-search-form").css("display", "none");
+    $("#landing-section").css("display", "none");
+    $("#js-ticker-all-results").css("display", "block");
+
   });
 }
+
 function home() {
   $(".nav-home").click(function(event) {
-    event.stopPropagation();
-    $("#landing-section").prepend(x);
-    $("#landing-section").prepend(b);
-    $("table").css("visibility", "hidden");
+    event.stopPropagation(); 
+    $("#js-search-form").css("display", "none");
+    $('#js-ticker-all-results').css("display", "none");
+    $("#js-search-results").css("display", "none");
+    $("#landing-section").css("display", "block");
   });
 }
+
 function watchTickersButton() {
   $(".nav-tickers").click(function(event) {
     event.stopPropagation();
-    x = $(".col-4").detach();     
+    $("#landing-section").css("display", "none");
+    $('#js-ticker-all-results').css("display", "none");
     $("#js-search-form").css("display", "block");
   });
+}
+function watchRefresh() {
+  $("#js-ticker-all-results").on('click', '.refresh', function(event) {
+    event.stopPropagation();
+    getAllStocks();
+  });  
 }
 
 
@@ -190,3 +204,4 @@ $(watchTickersButton);
 $(watchSubmit);
 $(home);
 $(getAllStocks);
+$(watchRefresh);

@@ -53,7 +53,7 @@ body {
 
   /* 4 columns, 4/12 in % */
   .col-4 {
-    height: 100%;
+    height: 420px;
     width: 33.333333%;
   }
 
@@ -106,6 +106,7 @@ body {
 }
 }
 .card {
+  background: #fff;
   height: 100%;
   border: 2px solid grey ;
   margin-bottom: 20px;
@@ -114,14 +115,15 @@ body {
   cursor: pointer;
 }
 .card-image {
+  padding: 1px;
   border-bottom: 1px solid black;
-  height: 300px;
   width: 100%;
+  height: 60%;
 }
 
 .card-content {
+  height: 40%;
   background-color: #fff;
-  height: 100%;
   padding: 10px;
 }
 .card-content a {
@@ -181,8 +183,6 @@ header {
 }
 
  .card-content h3 {
-  display: block;
-  height: 90%;
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 0;
@@ -304,3 +304,23 @@ table.darkTable tfoot td {
   font-size: 12px;
 }
 
+.cryptocurrency-background img{
+  height: 100%;
+  width: 100%;
+}
+
+.refresh {
+  background: #FFF url(https://cbwconline.com/IMG/Codepen/Blue%20Refresh.svg) center/36px no-repeat;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  box-shadow: 0px 5px 15px rgba(#000, .3);
+  position: fixed;
+  cursor: pointer;
+}
+#js-search-form {
+  display: none;
+}
+#js-ticker-all-results {
+  display: none;
+}
