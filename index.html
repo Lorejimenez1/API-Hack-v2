@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
 	<link href="https://fonts.googleapis.com/css?family=Arvo|Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Lorenzo's API Hack</title>
+	<title>CryptoView</title>
   <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -15,70 +15,69 @@
 <body>
 	<header role="banner">
 			<h1 class="title">CryptoView</h1>						
-				<nav class="nav">
+				<nav class="nav-bar">
 					<ul>
-						<li class="nav-home active">Home</li>
-						<li class="nav-tickers">Tickers</li>
-						<li class="nav-compare">Compare</li>
+						<li class="nav home active">Home</li>
+						<li class="nav tickers">Tickers</li>
+						<li class="nav compare">Compare</li>
 					</ul>
 				</nav>
   </header>
   <main role="main">
-			<h1 class="main-header">Search and compare cryptocurrency</h1>
-			<h2>Crypto view is the easist place to find technical stats on coins</h2>
-			<div id="landing-section" class="row" aria-live="assertive">
-					<div class="col-4">
-						<div class="card">
-							<img class="card-image" src="https://g.foolcdn.com/editorial/images/484328/gettyimages-882340742_large.jpg" />
-							<div class="card-content">
-								<h3>Compare</h3>
-								<p>Get real-time technical data on the top tickers</p>
-								<p>Symbol	Last Price	24H Change	24H High	24H Low	24H Volume</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="card">
-							<img class="card-image" src="https://safetradebinaryoptions.com/wp-content/uploads/2018/02/C5incrZ.jpg" />
-							<div class="card-content">
-								<h3>Tickers</h3>
-								<p>Support and technical dara for over 350 coins/tokens</p>
-								<p>Search for your perticaluar ticker</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-4">
-						<div class="card">
-							<img class="card-image" src="https://i.pinimg.com/originals/5e/89/35/5e8935284d36013b52abb3ae23d7be9a.png"/>
-							<div class="card-content">
-								<h3>Why Blockchain</h3>
-								<p>Secure & Decentralized: Designed to manage privacy, ownership and prevent censorship</p>
-								<p>Tokens & Incentives: Use tokens to reflect ownership, utility, and provide incentives</p>
-							</div>
-						</div>
+		<h2 class="main-header">Search and compare cryptocurrency</h2>
+		<h2>Crypto view is the easist place to find technical stats on coins</h2>
+		<div id="landing-section" class="row" aria-live="assertive">
+			<div class="col-4">
+				<div class="card">
+					<img class="card-image" src="images/cryptoview-screenshot2.png" />
+					<div class="card-content">
+						<h3>Compare</h3>
+							<p>Get real-time technical data on the top tickers</p>
+							<p>Symbol	Last Price	24H Change	24H High	24H Low	24H Volume</p>
 					</div>
 				</div>
-				<div id="search-box-1" class="row">
+			</div>
+			<div class="col-4">
+				<div class="card">
+					<img class="card-image" src="https://exante.eu/media/posts/3_07Artboard-1.png.800x600_q95.png" />
+					<div class="card-content">
+						<h3>Tickers</h3>
+						<p>Support technical data for over 350 coins/tokens</p>
+						<p>Search for your ticker</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card">
+					<img class="card-image" src="https://3mgj4y44nc15fnv8d303d8zb-wpengine.netdna-ssl.com/wp-content/uploads/2017/05/an-introduction-to-blockchain-696x449.jpg"/>
+					<div class="card-content">
+						<h3>Why Blockchain</h3>
+						<p>Secure & Decentralized: Designed to manage privacy, ownership and prevent censorship</p>
+						<p>Tokens & Incentives: Use tokens to reflect ownership, utility, and provide incentives</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="search-box-1" class="row">
   		<div id="search-box" class="col-12">
 				<form id="js-search-form" class="search-form">
-					<legend></legend>
 					<div class = "search-input">
 						<label for="search-box"> 
 						<input aria-label="search-input"  placeholder=" BTC" type="text" name="search-box" id="js-query" class = "input-box"  pattern="[A-Za-z]{3}" title="Three letter Symbol code" required>
 					</div>
-				<div class = "search-button">
-					<button aria-label="submit button"id="js-search-button"   class="btn green fa fa-search" type="submit"></button>
-					<button aria-label="refresh button"id="js-refresh-button" class="btn green  fa fa-refresh" type="submit"></button>
-				</div>
-			</form>
-		</div> 
-	  </div>
+					<div class = "search-button">
+						<button aria-label="submit button"id="js-search-button"   class="btn green fa fa-search" type="submit"></button>
+						<button aria-label="refresh button"id="js-refresh-button" class="btn green  fa fa-refresh" type="submit"></button>
+					</div>
+				</form>
+			</div> 
+		</div>
+		
 		<div id="js-search-results" class="row" aria-live="assertive"></div>
 		<div role="region" id="js-news-results" class="row" ></div>
-    <div role="region" id="js-ticker-all-results" class="row">
-
-	
-    </div>
+		<div role="region" id="js-ticker-all-results" class="row"></div>
+		
   </main>
   <script src="index.js"></script>	  
 	</body>

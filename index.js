@@ -1,55 +1,56 @@
 const CRYPTO_SEARCH_URL = 'https://cors-anywhere.herokuapp.com/' + 'https://api.bitfinex.com/v2/tickers';
 const CRYPTO_NEWS_URL = 'https://newsapi.org/v2/everything';
-const bitfinex_api = 'https://cors-anywhere.herokuapp.com/' + 'https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD,tMKRUSD,tBABUSD,tETHUSD,tDSHUSD,tBSVUSD,tLTCUSD,tZECUSD,tXMRUSD,tDGXUSD,tREPUSD,tMLNUSD';
-
+const BITFINEX_API = 'https://cors-anywhere.herokuapp.com/' + 'https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD,tMKRUSD,tBABUSD,tETHUSD,tDSHUSD,tBSVUSD,tLTCUSD,tZECUSD,tXMRUSD,tDGXUSD,tREPUSD,tMLNUSD';
 
 function getAllStocks() {
-  $.getJSON(bitfinex_api, displayAllStocks);
+  $.getJSON(BITFINEX_API, displayAllStocks);
 }
 
 function displayAllStocks(data) {
-
   let stockArray = data;
 
   $('#js-ticker-all-results').html(` 
-  <h2>Live: Top crytpo prices</h2><button class=refresh></button>
-  <table class="darkTable">
-  <thead>
-    <tr>
-    <th>Symbol</th>
-    <th>Last Price</th>
-    <th>24H Change</th>
-    <th>24H High</th>
-    <th>24H Low</th>
-    <th>24H Volume</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>${stockArray[0][0].slice(1, 4)}</td><td>${stockArray[0][1]}</td><td>${stockArray[0][2].toFixed(2)}</td><td>${stockArray[0][3]}</td><td>${stockArray[0][4].toFixed(2)}</td><td>${stockArray[0][5]}</td></tr>
-    <tr>
-    <td>${stockArray[1][0].slice(1, 4)}</td><td>${stockArray[1][1]}</td><td>${stockArray[1][2].toFixed(2)}</td><td>${stockArray[1][3]}</td><td>${stockArray[1][4].toFixed(2)}</td><td>${stockArray[1][5]}</td></tr>
-    <tr>
-    <td>${stockArray[2][0].slice(1, 4)}</td><td>${stockArray[2][1]}</td><td>${stockArray[2][2].toFixed(2)}</td><td>${stockArray[2][3]}</td><td>${stockArray[2][4].toFixed(2)}</td><td>${stockArray[2][5]}</td></tr>
-    <tr>
-    <td>${stockArray[3][0].slice(1, 4)}</td><td>${stockArray[3][1]}</td><td>${stockArray[3][2].toFixed(2)}</td><td>${stockArray[3][3]}</td><td>${stockArray[3][4].toFixed(2)}</td><td>${stockArray[3][5]}</td></tr>
-    <tr>
-    <td>${stockArray[4][0].slice(1, 4)}</td><td>${stockArray[4][1]}</td><td>${stockArray[4][2].toFixed(2)}</td><td>${stockArray[4][3]}</td><td>${stockArray[4][4].toFixed(2)}</td><td>${stockArray[4][5]}</td></tr>
-    <tr>
-    <td>${stockArray[5][0].slice(1, 4)}</td><td>${stockArray[5][1]}</td><td>${stockArray[5][2].toFixed(2)}</td><td>${stockArray[5][3]}</td><td>${stockArray[5][4].toFixed(2)}</td><td>${stockArray[5][5]}</td></tr>
-    <tr>
-    <td>${stockArray[6][0].slice(1, 4)}</td><td>${stockArray[6][1]}</td><td>${stockArray[6][2].toFixed(2)}</td><td>${stockArray[6][3]}</td><td>${stockArray[6][4].toFixed(2)}</td><td>${stockArray[6][5]}</td></tr>
-    <tr>
-    <td>${stockArray[7][0].slice(1, 4)}</td><td>${stockArray[7][1]}</td><td>${stockArray[7][2].toFixed(2)}</td><td>${stockArray[7][3]}</td><td>${stockArray[7][4].toFixed(2)}</td><td>${stockArray[7][5]}</td></tr>
-    <tr>
-    <td>${stockArray[8][0].slice(1, 4)}</td><td>${stockArray[8][1]}</td><td>${stockArray[8][2].toFixed(2)}</td><td>${stockArray[8][3]}</td><td>${stockArray[8][4].toFixed(2)}</td><td>${stockArray[8][5]}</td></tr>
-    <tr>
-    <td>${stockArray[9][0].slice(1, 4)}</td><td>${stockArray[9][1]}</td><td>${stockArray[9][2].toFixed(2)}</td><td>${stockArray[9][3]}</td><td>${stockArray[9][4].toFixed(2)}</td><td>${stockArray[9][5]}</td></tr>
-    <tr>
-    <td>${stockArray[10][0].slice(1, 4)}</td><td>${stockArray[10][1]}</td><td>${stockArray[10][2].toFixed(2)}</td><td>${stockArray[10][3]}</td><td>${stockArray[10][4].toFixed(2)}</td><td>${stockArray[10][5]}</td></tr>
-    </tbody>
-    </tr>
-  </table>
+  <h2>Live: Top crytpo prices</h2>
+  <button aria-label="refresh button" class="btn green  fa fa-refresh refresh"></button>
+  <div style="overflow-x:auto;">
+    <table class="darkTable">
+    <thead>
+      <tr>
+      <th>Symbol</th>
+      <th>Last Price</th>
+      <th>24H Change</th>
+      <th>24H High</th>
+      <th>24H Low</th>
+      <th>24H Volume</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>${stockArray[0][0].slice(1, 4)}</td><td>${stockArray[0][1]}</td><td>${stockArray[0][2].toFixed(2)}</td><td>${stockArray[0][3]}</td><td>${stockArray[0][4].toFixed(2)}</td><td>${stockArray[0][5]}</td></tr>
+      <tr>
+      <td>${stockArray[1][0].slice(1, 4)}</td><td>${stockArray[1][1]}</td><td>${stockArray[1][2].toFixed(2)}</td><td>${stockArray[1][3]}</td><td>${stockArray[1][4].toFixed(2)}</td><td>${stockArray[1][5]}</td></tr>
+      <tr>
+      <td>${stockArray[2][0].slice(1, 4)}</td><td>${stockArray[2][1]}</td><td>${stockArray[2][2].toFixed(2)}</td><td>${stockArray[2][3]}</td><td>${stockArray[2][4].toFixed(2)}</td><td>${stockArray[2][5]}</td></tr>
+      <tr>
+      <td>${stockArray[3][0].slice(1, 4)}</td><td>${stockArray[3][1]}</td><td>${stockArray[3][2].toFixed(2)}</td><td>${stockArray[3][3]}</td><td>${stockArray[3][4].toFixed(2)}</td><td>${stockArray[3][5]}</td></tr>
+      <tr>
+      <td>${stockArray[4][0].slice(1, 4)}</td><td>${stockArray[4][1]}</td><td>${stockArray[4][2].toFixed(2)}</td><td>${stockArray[4][3]}</td><td>${stockArray[4][4].toFixed(2)}</td><td>${stockArray[4][5]}</td></tr>
+      <tr>
+      <td>${stockArray[5][0].slice(1, 4)}</td><td>${stockArray[5][1]}</td><td>${stockArray[5][2].toFixed(2)}</td><td>${stockArray[5][3]}</td><td>${stockArray[5][4].toFixed(2)}</td><td>${stockArray[5][5]}</td></tr>
+      <tr>
+      <td>${stockArray[6][0].slice(1, 4)}</td><td>${stockArray[6][1]}</td><td>${stockArray[6][2].toFixed(2)}</td><td>${stockArray[6][3]}</td><td>${stockArray[6][4].toFixed(2)}</td><td>${stockArray[6][5]}</td></tr>
+      <tr>
+      <td>${stockArray[7][0].slice(1, 4)}</td><td>${stockArray[7][1]}</td><td>${stockArray[7][2].toFixed(2)}</td><td>${stockArray[7][3]}</td><td>${stockArray[7][4].toFixed(2)}</td><td>${stockArray[7][5]}</td></tr>
+      <tr>
+      <td>${stockArray[8][0].slice(1, 4)}</td><td>${stockArray[8][1]}</td><td>${stockArray[8][2].toFixed(2)}</td><td>${stockArray[8][3]}</td><td>${stockArray[8][4].toFixed(2)}</td><td>${stockArray[8][5]}</td></tr>
+      <tr>
+      <td>${stockArray[9][0].slice(1, 4)}</td><td>${stockArray[9][1]}</td><td>${stockArray[9][2].toFixed(2)}</td><td>${stockArray[9][3]}</td><td>${stockArray[9][4].toFixed(2)}</td><td>${stockArray[9][5]}</td></tr>
+      <tr>
+      <td>${stockArray[10][0].slice(1, 4)}</td><td>${stockArray[10][1]}</td><td>${stockArray[10][2].toFixed(2)}</td><td>${stockArray[10][3]}</td><td>${stockArray[10][4].toFixed(2)}</td><td>${stockArray[10][5]}</td></tr>
+      </tbody>
+      </tr>
+    </table>
+  </div>  
   `);
 }
 
@@ -66,14 +67,12 @@ function getDataFromNewsApi(searchTerm, searchTermTwo, callback) {
 }
 
 function displayNewsData(data) {
-  console.log(data);
   const news = data.articles.map((item, index) => renderNews(item));
   $('#js-news-results').prop('hidden', false);
   $('#js-news-results').html(news);
 }
 
 function renderNews(result) {
-  //console.log(result)
   return `
   	<div class=col-4>
   		<div class="card w3-hover-grayscale">
@@ -92,7 +91,6 @@ function renderNews(result) {
 function getDataFromBitfinex(searchTerm, callback) {
   const query = {
     symbols: `t${searchTerm}USD,t${searchTerm}BTC`
-
   }
   $.getJSON(CRYPTO_SEARCH_URL, query, callback);
 }
@@ -104,50 +102,53 @@ function displaySearchData(data) {
 }
 
 function renderResult(result) {
-  //console.log(result)
   let stockArray = result
   if (result.length > 1) {
     return `
-  <table class="darkTable">
-  <thead>
-    <tr>
-    <th>Symbol</th>
-    <th>Last Price</th>
-    <th>24H Change</th>
-    <th>24H High</th>
-    <th>24H Low</th>
-    <th>24H Volume</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td>${stockArray[0][0].slice(1)}</td><td>${stockArray[0][1]}</td><td>${stockArray[0][2].toFixed(2)}</td><td>${stockArray[0][3]}</td><td>${stockArray[0][4].toFixed(2)}</td><td>${stockArray[0][5]}</td></tr>
-    <tr>
-    <td>${stockArray[1][0].slice(1)}</td><td>${stockArray[1][1]}</td><td>${stockArray[1][2].toFixed(2)}</td><td>${stockArray[1][3]}</td><td>${stockArray[1][4].toFixed(2)}</td><td>${stockArray[1][5]}</td></tr>
-    </tbody>
-    </tr>
-  </table>
+    <div style="overflow-x:auto;">  
+      <table class="darkTable">
+      <thead>
+        <tr>
+        <th>Symbol</th>
+        <th>Last Price</th>
+        <th>24H Change</th>
+        <th>24H High</th>
+        <th>24H Low</th>
+        <th>24H Volume</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>${stockArray[0][0].slice(1)}</td><td>${stockArray[0][1]}</td><td>${stockArray[0][2].toFixed(2)}</td><td>${stockArray[0][3]}</td><td>${stockArray[0][4].toFixed(2)}</td><td>${stockArray[0][5]}</td></tr>
+        <tr>
+        <td>${stockArray[1][0].slice(1)}</td><td>${stockArray[1][1]}</td><td>${stockArray[1][2].toFixed(2)}</td><td>${stockArray[1][3]}</td><td>${stockArray[1][4].toFixed(2)}</td><td>${stockArray[1][5]}</td></tr>
+        </tbody>
+        </tr>
+      </table>
+    </div>  
     `;
   } else {
     return `
-    <table class="darkTable">
-    <thead>
-      <tr>
-      <th>Symbol</th>
-      <th>Last Price</th>
-      <th>24H Change</th>
-      <th>24H High</th>
-      <th>24H Low</th>
-      <th>24H Volume</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>${stockArray[0][0].slice(1)}</td><td>${stockArray[0][1]}</td><td>${stockArray[0][2].toFixed(2)}</td><td>${stockArray[0][3]}</td><td>${stockArray[0][4].toFixed(2)}</td><td>${stockArray[0][5]}</td></tr>
-      <tr>
-      </tbody>
-      </tr>
-    </table>
+    <div style="overflow-x:auto;">
+      <table class="darkTable">
+      <thead>
+        <tr>
+        <th>Symbol</th>
+        <th>Last Price</th>
+        <th>24H Change</th>
+        <th>24H High</th>
+        <th>24H Low</th>
+        <th>24H Volume</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>${stockArray[0][0].slice(1)}</td><td>${stockArray[0][1]}</td><td>${stockArray[0][2].toFixed(2)}</td><td>${stockArray[0][3]}</td><td>${stockArray[0][4].toFixed(2)}</td><td>${stockArray[0][5]}</td></tr>
+        <tr>
+        </tbody>
+        </tr>
+      </table>
+    </div>  
       `;
   }
 }
@@ -163,8 +164,12 @@ function watchSubmit() {
 }
 
 function watchCompareButton() {
-  $(".nav-compare").click(function(event) {
+  $(".compare").click(function(event) {
     event.stopPropagation();
+    $("h2").css("color", "#212121");
+    $("body").css("background", "#fff");
+    $(".nav").removeClass("active");
+    $(".compare").addClass("active");
     $("#js-search-results").css("display", "none");
     $("#js-search-form").css("display", "none");
     $("#landing-section").css("display", "none");
@@ -174,8 +179,12 @@ function watchCompareButton() {
 }
 
 function home() {
-  $(".nav-home").click(function(event) {
-    event.stopPropagation(); 
+  $(".home").click(function(event) {
+    event.stopPropagation();
+    $("body").css("background", "linear-gradient(to bottom, #1652EF 0%, 50%,#fff 50%,white 100%)");
+    $("h2").css("color", "#fff");
+    $(".nav").removeClass("active");
+    $(".home").addClass("active"); 
     $("#js-search-form").css("display", "none");
     $('#js-ticker-all-results').css("display", "none");
     $("#js-search-results").css("display", "none");
@@ -184,8 +193,12 @@ function home() {
 }
 
 function watchTickersButton() {
-  $(".nav-tickers").click(function(event) {
+  $(".tickers").click(function(event) {
     event.stopPropagation();
+    $("h2").css("color", "#212121");
+    $("body").css("background", "#fff");
+    $(".nav").removeClass("active");
+    $(".tickers").addClass("active");
     $("#landing-section").css("display", "none");
     $('#js-ticker-all-results').css("display", "none");
     $("#js-search-form").css("display", "block");
@@ -197,7 +210,6 @@ function watchRefresh() {
     getAllStocks();
   });  
 }
-
 
 $(watchCompareButton);
 $(watchTickersButton);
